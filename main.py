@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 # import threading  # 导入 threading 模块
 # import logging    # 导入 logging 模块
 # from pinecone_plugins.assistant.models.chat import Message
-from pinecone_plugins.assistant.models.chat import Message
-# from pinecone import Message
 from pinecone import Pinecone
 
 
@@ -16,7 +14,7 @@ PINECONE_API_KEY = st.secrets['PINECONE_API_KEY']
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 # assistant = pc.assistant.Assistant(assistant_name="example-assistant2")
-assistant = pc.assistant.Assistant(assistant_name="ie577")
+assistant = pc.assistant.Assistant(assistant_name="ce222")
 def get_response_content(query):
     # Create a Message object using the input text
     msg = Message(content=query)
@@ -75,7 +73,7 @@ for message in st.session_state.messages:
 #     # st.session_state.messages.append({"role": "assistant", "content": response})
 #     st.session_state.messages.append({"role": "assistant", "content": answer})
 
-if prompt := st.chat_input("Ask your query about human factors, safety engineering, and applied ergonomics."):
+if prompt := st.chat_input("Ask your query about life cycle engineering and management of constructed facilities."):
     # Add user message to chat history
     # st.session_state.messages.append({"role": "user", "content": prompt})
     # 在用户输入后附加内容
@@ -99,7 +97,3 @@ if prompt := st.chat_input("Ask your query about human factors, safety engineeri
     answer = get_response_content(enhanced_prompt)
 
     # Update the placeholder with the actual response
-    thinking_placeholder.markdown(answer)
-
-    # Add assistant response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": answer})
