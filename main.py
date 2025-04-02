@@ -16,7 +16,7 @@ PINECONE_API_KEY = st.secrets['PINECONE_API_KEY']
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 # assistant = pc.assistant.Assistant(assistant_name="example-assistant2")
-assistant = pc.assistant.Assistant(assistant_name="ie577")
+assistant = pc.assistant.Assistant(assistant_name="ce222")
 def get_response_content(query):
     # Create a Message object using the input text
     msg = Message(content=query)
